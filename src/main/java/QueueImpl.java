@@ -2,36 +2,40 @@ import java.util.ArrayList;
 
 public class QueueImpl<E> implements Queue<E> {
 
-    private E[] data;
+    private ArrayList<E> data = new ArrayList<E>();
     int len;
     int maxLength;
 
-    public QueueImpl(int len){
-        this.data = len; // // Object[len]
+    public QueueImpl(int num){
+        this.maxLength = num;
+        this.len = 0;
     }
-    @Override
+
+
     public void push(E e) throws FullQueueException {
-        if (this.estaPlena()) throw new FullQueueException();
+        if (this.maxLength> this.len ){
+            this.data.add(e);
+            this.len++;
 
-        this.data[this.p++] = e;
-
-
+        }
+        else{
+            throw new FullQueueException();
+        }
     }
 
-    @Override
     public E pop() throws EmptyQueueException {
-        if (this.estaBuida()) throw new EmptyQueueException();
+        if (this.len==0){
+            throw new EmptyQueueException();
+        }
+        else{
+            E primer = data.remove(0);
+            this.len--;
+            return primer;
 
-        E primer = this.data[0];
-
-        //lshift();
-
-        return primer;
+        }
     }
 
-    @Override
     public int size() {
         return this.len;
     }
-
 }

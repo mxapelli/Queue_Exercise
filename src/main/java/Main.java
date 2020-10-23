@@ -3,24 +3,27 @@ public class Main {
         Queue<Integer> q = new QueueImpl<Integer>(5);
         try {
             q.push(1);
-            System.out.println(q.size());
+            System.out.println("Size: "+ q.size());
             q.push(2);
-            System.out.println(q.size());
+            System.out.println("Size: "+ q.size());
             q.push(3);
-            System.out.println(q.size());
+            System.out.println("Size: "+ q.size());
             q.push(4);
-            System.out.println(q.size());
+            System.out.println("Size: "+ q.size());
             q.push(5);
+            System.out.println("Size: "+ q.size());
 
             q.pop();
             q.pop();
             q.pop();
+            System.out.println("Hem fet 3 pops");
 
-            System.out.println(q.size());
 
-            int un = q.pop();
-            System.out.println("valor cua "+un);
-            System.out.println(q.size());
+            System.out.println("Size: "+ q.size());
+
+            int val = q.pop();
+            System.out.println("valor obtingut "+ val);
+            System.out.println("Size: "+ q.size());
         }
         catch (FullQueueException fullExp){
             //

@@ -51,15 +51,15 @@ public class QueueImplTest  {
         Assert.assertEquals(3, this.q.size());
         String un =this.q.pop();
         Assert.assertEquals(2, this.q.size());
-        Assert.assertEquals(1, un);
+        Assert.assertEquals("1", un);
 
         String dos =this.q.pop();
         Assert.assertEquals(1, this.q.size());
-        Assert.assertEquals(2, dos);
+        Assert.assertEquals("2", dos);
 
         String tres =this.q.pop();
         Assert.assertEquals(0, this.q.size());
-        Assert.assertEquals(3, tres);
+        Assert.assertEquals("3", tres);
 
     }
 
@@ -67,15 +67,15 @@ public class QueueImplTest  {
     public void testPopEmpty() throws Exception{
         Assert.assertEquals(3, this.q.size());
         String un =this.q.pop();
-        Assert.assertEquals(1, un);
+        Assert.assertEquals("1", un);
         Assert.assertEquals(2, this.q.size());
 
         String dos =this.q.pop();
-        Assert.assertEquals(2, dos);
+        Assert.assertEquals("2", dos);
         Assert.assertEquals(1, this.q.size());
 
         String tres =this.q.pop();
-        Assert.assertEquals(3, tres);
+        Assert.assertEquals("3", tres);
         Assert.assertEquals(0, this.q.size());
 
         String quatre =this.q.pop();
